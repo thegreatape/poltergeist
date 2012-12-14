@@ -356,5 +356,13 @@ describe Capybara::Session do
         end
       end
     end
+
+    context 'event targets' do
+      it 'works correctly with jquery' do
+        @session.visit '/poltergeist/on_change'
+        @session.select "B", from: "test-select"
+        @session.find(:css, '.from-target').text.should == "B"
+      end
+    end
   end
 end

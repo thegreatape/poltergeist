@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>jquery :select test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <script>$(function(){
+      $('select').on('change', function(evt){
+        $('.from-target').text( $(evt.target).find(':selected').text() );
+        $('.globally').text( $(':selected').text() )
+      });
+    })</script>
+  </head>
+  <body>
+    <label for="test-select">Test Select</label>
+    <select name="test-select">
+      <option value="1">A</option>
+      <option value="2">B</option>
+    </select>
+    <div class="from-target"> </div>
+    <div class="globally"> </div>
+  </body>
+</html>
